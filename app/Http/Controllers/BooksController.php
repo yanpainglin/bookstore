@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Book;
 use App\Category;
+use Session;
  
  
 
@@ -13,7 +14,7 @@ class BooksController extends Controller
     public function __construct()
 
     {
-        $this->middleware("auth");    
+        $this->middleware("auth")->except('bookstore', 'showbookbycat', 'detail');    
     }
     public function bookstore()
     {   

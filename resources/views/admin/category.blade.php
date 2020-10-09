@@ -2,7 +2,11 @@
 @extends('layout.app')
 
 @section('content')
-
+	 @if(Session::has('success'))
+			<script>
+				alert('{{ Session::get("success") }}')
+			</script>
+	 @endif
 	<div class="row justify-content-center">
 	<div class="col-md-8">
 		<div class="container">
